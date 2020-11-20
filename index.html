@@ -1,0 +1,49 @@
+<html>
+    <header>
+        <title>OpenCC</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script src="resources.js"></script>
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <script src="https://unpkg.com/vue@2.6.12/dist/vue.min.js"></script>
+        <script src="https://unpkg.com/element-ui@2.14.1/lib/index.js"></script>
+    </header>
+    <body>
+        <div id="app" style="font-family: Sans-serif !important">
+            <div style="margin: 30px">
+                <h1>OpenCC</h1>
+            </div>
+            <div style="margin: 30px">
+                <el-row :gutter="20">
+                    <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                            <div style="padding-top: 30px; padding-bottom: 30px">
+                                <el-radio-group v-model="src_locale" @change="change">
+                                    <el-radio label="cn">大陆简体</el-radio>
+                                    <el-radio label="hk">香港繁體</el-radio>
+                                    <el-radio label="tw">臺灣正體</el-radio>
+                                    <el-radio label="jp">日本新字體</el-radio>
+                                </el-radio-group>
+                            </div>
+                            <el-input type="textarea" v-model="src_text" :rows="20" @input="change"></el-input>
+                        </div>
+                    </el-col>
+                    <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                            <div style="padding-top: 30px; padding-bottom: 30px">
+                                <el-radio-group v-model="dst_locale" @change="change">
+                                    <el-radio label="cn">大陆简体</el-radio>
+                                    <el-radio label="hk">香港繁體</el-radio>
+                                    <el-radio label="tw">臺灣正體</el-radio>
+                                    <el-radio label="jp">日本新字體</el-radio>
+                                </el-radio-group>
+                            </div>
+                            <el-input type="textarea" v-model="dst_text" :rows="20"></el-input>
+                        </div>
+                    </el-col>
+                </el-row>
+            </div>
+        </div>
+        <script src="ui.js"></script>
+    </body>
+</html>
